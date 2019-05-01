@@ -1,0 +1,56 @@
+{
+  "name": "custom-elements-module",
+  "version": "1.0.0",
+  "description": "A recompiled polyfill for HTML Custom Elements",
+  "author": "Jonathan Neal <jonathantneal@hotmail.com>",
+  "license": "CC0-1.0, BSD-3-Clause",
+  "repository": "jonathantneal/custom-elements-module",
+  "homepage": "https://github.com/jonathantneal/custom-elements-module#readme",
+  "bugs": "https://github.com/jonathantneal/custom-elements-module/issues",
+  "main": "index.js",
+  "module": "index.mjs",
+  "browser": "custom-elements.js",
+  "files": [
+    "custom-elements.js",
+    "custom-elements.js.map",
+    "index.js",
+    "index.js.map",
+    "index.mjs",
+    "index.mjs.map"
+  ],
+  "scripts": {
+    "build": "node src/build",
+    "prepublishOnly": "npm test && npm run build",
+    "pretest:tape": "npm run build",
+    "test": "npm run test:js && npm run test:tape",
+    "test:js": "eslint src/*.js src/**/*.js --cache --ignore-path .gitignore --quiet",
+    "test:tape": "node test"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@webcomponents/custom-elements": "^1.2.4",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-func-wrap": "^1.0.1",
+    "babel-plugin-transform-globals": "^1.0.1",
+    "eslint": "^5.16.0",
+    "jsdom": "^15.0.0",
+    "pre-commit": "^1.2.2",
+    "terser": "^3.17.0"
+  },
+  "keywords": [
+    "javascript",
+    "node",
+    "babel",
+    "babel-plugin",
+    "function",
+    "wrap",
+    "esm",
+    "cjs",
+    "iife",
+    "global"
+  ]
+}
